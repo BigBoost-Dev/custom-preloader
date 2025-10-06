@@ -23,8 +23,40 @@
   font-family: Instrument Sans;
   color: #fff;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
-#preloader-text.strike {
+#preloader-text-initial,
+#preloader-text-secondary {
+  display: inline-block;
+}
+
+#preloader-text-initial.strike {
   text-decoration: line-through;
+}
+
+#preloader-text-secondary {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#preloader-text-secondary:not(:empty) {
+  opacity: 1;
+}
+
+#preloader-logo {
+  display: inline-flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+#preloader-logo.visible {
+  opacity: 1;
+}
+
+.preloader-site-title {
+  font-weight: 600;
 }
